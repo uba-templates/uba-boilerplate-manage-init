@@ -3441,7 +3441,7 @@
 
 	/**
 	 * 解绑事件
-	 * 
+	 *
 	**/
 	var off = function off(name, callback) {
 	    if (Object.prototype.toString.call(name) == '[object Array]') {
@@ -3473,7 +3473,7 @@
 	};
 
 	/**
-	 * 
+	 *
 	**/
 	var one = function one(name, callback) {
 	    this.on(name, callback, 1);
@@ -5092,7 +5092,7 @@
 	var createEmptyRow = function createEmptyRow() {
 	    var r = new Row({ parent: this });
 	    this.addRow(r);
-	    if (!this.getCurrentRow()) this.setRowSelect(r);
+	    //if (!this.getCurrentRow()) this.setRowSelect(r);
 	    return r;
 	};
 
@@ -7506,7 +7506,7 @@
 	  allData.data = data;
 	  allData.status = status || 'nrm';
 	  this.setData(allData, true);
-	  this.currentRowChange(-this.currentRowChange());
+	  //this.currentRowChange(-this.currentRowChange());
 	};
 
 	exports.setSimpleData = setSimpleData;
@@ -23043,7 +23043,7 @@
 		});
 	};
 
-	//tab键切换 下拉隐藏	
+	//tab键切换 下拉隐藏
 	Combobox.fn.blurEvent = function () {
 		var self = this;
 
@@ -23213,7 +23213,7 @@
 		var self = this;
 		(0, _event.on)(self.element, "click", function () {
 			// $(this.$element).on('click',function(){
-			// $(self.oDiv).find('.select-search input').val('')  	
+			// $(self.oDiv).find('.select-search input').val('')
 			self.oDiv.querySelector('.select-search input').value = "";
 			var oLis = this.oDiv.querySelector("ul").childNodes;
 			if (self.options.single == "true" || self.options.single == true) {
@@ -23268,7 +23268,7 @@
 
 	// for(var k=data.length;k<Olis.length;k++){
 	// $(Olis[k]).remove();
-	// }		
+	// }
 
 	// }else if(data.length > Olis.length){
 	// var liTemplate = Olis[0]
@@ -26833,7 +26833,7 @@
                 $('.dwb-c .dwb', elm).addClass('mbsc-ic mbsc-ic-close');
                 $('.dwb-cl .dwb', elm).addClass('mbsc-ic mbsc-ic-close');
                 $('.dwb-n .dwb', elm).addClass('mbsc-ic mbsc-ic-loop2');
-            
+
                 $('.dwwl', elm).on('touchstart mousedown DOMMouseScroll mousewheel', function (e) {
                     if (e.type === 'mousedown' && touch) {
                         return;
@@ -27223,7 +27223,7 @@
     ms.formatDate = ms.datetime.formatDate;
     ms.parseDate = ms.datetime.parseDate;
     // ---
-    
+
 })(jQuery);
 
 
@@ -27654,7 +27654,7 @@
                                 '<div aria-live="assertive" class="dw-aria dw-hidden"></div>' +
                                 (s.headerText ? '<div class="dwv">' + s.headerText + '</div>' : '') + // Header
                                 '<div class="dwcc">'; // Wheel group container
-            
+
             html += that._generateContent();
 
             html += '</div>';
@@ -27684,7 +27684,7 @@
             posEvents = 'orientationchange resize';
 
             that._markupReady();
-            
+
             event('onMarkupReady', [$markup]);
 
             // Show
@@ -27875,7 +27875,7 @@
                     }
                 }).on('touchend.dw', function (ev) {
                     var that = this;
-                    
+
                     if (!moved) {
                         // preventDefault and setTimeout are needed by iOS
                         ev.preventDefault();
@@ -27968,7 +27968,7 @@
             event('onThemeLoad', [lang, settings]);
 
             extend(s, theme, lang, userdef, settings);
-            
+
             preset = ms.presets[that._class][s.preset];
 
             // Add default buttons
@@ -28107,7 +28107,7 @@
     });
 
     // Prevent standard behaviour on body click
-    $(document).on('mouseover mouseup mousedown click', function (ev) { 
+    $(document).on('mouseover mouseup mousedown click', function (ev) {
         if (ms.tapped) {
             ev.stopPropagation();
             ev.preventDefault();
@@ -28883,7 +28883,7 @@
         date = new Date(),
         defaults = {
             startYear: date.getFullYear() - 100,
-            endYear: date.getFullYear() + 1, 
+            endYear: date.getFullYear() + 1,
             showNow: false,
             stepHour: 1,
             stepMinute: 1,
@@ -29118,7 +29118,7 @@
             function getYear(d) {
                 return s.getYear(d);
             }
-			
+
             function getMonth(d) {
                 return s.getMonth(d);
             }
@@ -29405,7 +29405,7 @@
                                     }
                                 }
                             }
-                            
+
                             if (!all) {
                                 // Calculate min and max values
                                 v1 = step(parts1[i], steps[v], mins[v], maxs[v]) + add;
@@ -29428,7 +29428,7 @@
                                     $('.dw-li', target).slice(i1, i2).removeClass('dw-v');
                                 }
                             }
-                                    
+
                         }
                     });
                 }
@@ -29541,7 +29541,7 @@
 
 
             // Initializations
-            // --- 
+            // ---
 
             inst.format = hformat;
             inst.order = o;
@@ -29640,7 +29640,7 @@
 
                                 // Set invalid indexes
                                 validateDates(invalid, y, m, first, maxdays, idx, 1);
-                                // Delete indexes which are valid 
+                                // Delete indexes which are valid
                                 validateDates(valid, y, m, first, maxdays, idx, 0);
 
                                 $.each(idx, function (i, v) {
@@ -29800,7 +29800,7 @@
             var def = $('option', elm).attr('value');
 
             option = multiple ? (v ? v[0] : def) : (v === undefined || v === null ? def : v);
-            
+
             if (s.group) {
                 group = elm.find('option[value="' + option + '"]').parent();
                 gr = group.index();
@@ -29877,7 +29877,7 @@
         $('option', elm).each(function () {
             main[this.value] = this.text;
         });
-        
+
         getOption(elm.val());
 
         $('#' + id).remove();
@@ -29938,7 +29938,7 @@
             } else {
                 value = [option];
             }
-            
+
             inst._setValue(value, fill, time, temp, change);
 
             // Set input/select values
@@ -30106,19 +30106,19 @@
 })(jQuery);
 
 !(function(){
-	var Uslider = function(ele,opt){	
+	var Uslider = function(ele,opt){
 		var me = this,ele = $(ele)
 		var opt = $.extend(true,{},me.slider_default,opt),sp = {};
 		opt.parent_box.css("height",opt.height)
-		ele.wrap(opt.parent_box)			
+		ele.wrap(opt.parent_box)
 		var slider = $("<div class='slider_box'></div>"),button_height = opt.height/ele.height();
 		var s_button = $("<div class='slider_button'></div>")
 		var u_slider_box = $("<div class='u_slider_box'></div>")
 		slider.append(s_button)
 		u_slider_box.append(slider)
-		s_button.css("height",button_height*100+"%")			
+		s_button.css("height",button_height*100+"%")
 		ele.parent().after(u_slider_box)
-		
+
 		//滚动条高度
 		sp.box_height = slider.height()
 		//按钮高度
@@ -30129,79 +30129,79 @@
 		sp.con_height = opt.height
 		s_button.on({
 			"mousedown":function(e){
-				opt.button_move = true;	
+				opt.button_move = true;
 				sp.b_clientY = e.clientY
 				//console.log(e)
 			},
 			"mouseleave":function(){
-				
-//				opt.button_move = false;	
-				
+
+//				opt.button_move = false;
+
 			},
 			"mouseup":function(){
-				
-				opt.button_move = false;	
-				
+
+				opt.button_move = false;
+
 			}
 		})
 		slider.on({
 			"mousemove":function(e){
-				
+
 				if(opt.button_move){
-					
-					var tmptop = s_button.position().top + (e.clientY - sp.b_clientY),tmptop;	
+
+					var tmptop = s_button.position().top + (e.clientY - sp.b_clientY),tmptop;
 					var tmpparent = ele.parent(".u_slider_con");
 					if(tmptop < 3 ){
 						s_button.css("top",3)
 						tmpparent.scrollTop(0)
 //						s_button.trigger("mouseup")
-					
+
 						return false;
 					}else if( (tmptop +  sp.button_height) > (sp.box_height  -3) ){
 						s_button.css("top",sp.box_height - sp.button_height - 3)
-						tmpparent.scrollTop(ele.height())							
+						tmpparent.scrollTop(ele.height())
 //						s_button.trigger("mouseup")
-					
+
 						return false;
 					}else{
 						s_button.css("top",tmptop)
-						var tmptop = (sp.ele_height - sp.con_height) * tmptop/(sp.box_height - sp.button_height)						
-						tmpparent.scrollTop(tmptop)							
-						
+						var tmptop = (sp.ele_height - sp.con_height) * tmptop/(sp.box_height - sp.button_height)
+						tmpparent.scrollTop(tmptop)
+
 					}
 					sp.b_clientY = e.clientY ;
 					e.stopPropagation();
 					return false;
-					
+
 				}
 			},
 			"mouseup":function(e){
 				opt.button_move = false;
 				e.stopPropagation();
 				return false;
-				
+
 			}
 		})
-			
-		
-		
+
+
+
 	}
 	Uslider.prototype = {
 		slider_default:{
 			parent_box:$("<div class='u_slider'><div class='u_slider_con' style='position:relative'></div></div>"),
 			height:400,
-			button_move:false	
+			button_move:false
 		}
-		
-		
+
+
 	}
-	
+
 	$.fn.slider = function(opt){
 		$.each(this, function(i,node) {
 			new Uslider(node,opt)
-		}); 
+		});
 	}
-})();	
+})();
 /*!
  * jQuery twitter bootstrap wizard plugin
  * Examples and documentation at: http://github.com/VinceG/twitter-bootstrap-wizard
@@ -30217,7 +30217,7 @@
 var bootstrapWizardCreate = function(element, options) {
 	var element = $(element);
 	var obj = this;
-	
+
 	// selector skips any 'li' elements that do not contain a child with a tab data-toggle
 	var baseItemSelector = 'li:has([data-toggle="tab"])';
 	var historyStack = [];
@@ -30226,7 +30226,7 @@ var bootstrapWizardCreate = function(element, options) {
 	var $settings = $.extend({}, $.fn.bootstrapWizard.defaults, options);
 	var $activeTab = null;
 	var $navigation = null;
-	
+
 	this.rebindClick = function(selector, fn)
 	{
 		selector.unbind('click', fn).bind('click', fn);
@@ -30387,8 +30387,8 @@ var bootstrapWizardCreate = function(element, options) {
 		return $navigation.find(baseItemSelector + ':eq('+parseInt(obj.currentIndex()-1)+')');
 	};
 	this.show = function(index) {
-	  var tabToShow = isNaN(index) ? 
-      element.find(baseItemSelector + ' a[href=#' + index + ']') : 
+	  var tabToShow = isNaN(index) ?
+      element.find(baseItemSelector + ' a[href=#' + index + ']') :
       element.find(baseItemSelector + ':eq(' + index + ') a');
 	  if (tabToShow.length > 0) {
 	    historyStack.push(obj.currentIndex());
@@ -30421,7 +30421,7 @@ var bootstrapWizardCreate = function(element, options) {
 		// Remove menu item
 		$item.remove();
 	};
-	
+
 	var innerTabClick = function (e) {
 		// Get the index of the clicked tab
 		var $ul = $navigation.find(baseItemSelector);
@@ -30431,7 +30431,7 @@ var bootstrapWizardCreate = function(element, options) {
 		    return false;
 		}
 	};
-	
+
 	var innerTabShown = function (e) {  // use shown instead of show to help prevent double firing
 		$element = $(e.target).parent();
 		var nextTab = $navigation.find(baseItemSelector).index($element);
@@ -30448,21 +30448,21 @@ var bootstrapWizardCreate = function(element, options) {
 		$activeTab = $element; // activated tab
 		obj.fixNavigationButtons();
 	};
-	
+
 	this.resetWizard = function() {
-		
+
 		// remove the existing handlers
 		$('a[data-toggle="tab"]', $navigation).off('click', innerTabClick);
 		$('a[data-toggle="tab"]', $navigation).off('shown shown.bs.tab', innerTabShown);
-		
+
 		// reset elements based on current state of the DOM
 		$navigation = element.find('ul:first', element);
 		$activeTab = $navigation.find(baseItemSelector + '.active', element);
-		
+
 		// re-add handlers
 		$('a[data-toggle="tab"]', $navigation).on('click', innerTabClick);
 		$('a[data-toggle="tab"]', $navigation).on('shown shown.bs.tab', innerTabShown);
-		
+
 		obj.fixNavigationButtons();
 	};
 
@@ -30527,7 +30527,7 @@ $.fn.bootstrapWizard.defaults = {
 	onFirst:          null,
   onFinish:         null,
   onBack:           null,
-	onTabChange:      null, 
+	onTabChange:      null,
 	onTabClick:       null,
 	onTabShow:        null
 };

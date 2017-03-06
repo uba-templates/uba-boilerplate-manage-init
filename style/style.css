@@ -525,6 +525,7 @@ table td,table th{border:1px solid #999; padding:.5em 1em}*/
 /*测试验证对号*/
 span.u-form-control-success.uf.uf-correct{
 	margin-left:-30px;
+    top:5px!important;
 }
 /*表格最前方单选按钮*/
 .u-grid-content-multiSelect {

@@ -1,10 +1,10 @@
-/** 
+/**
  * tinper-neoui-grid v3.1.19
  * grid
  * author : yonyou FED
  * homepage : https://github.com/iuap-design/tinper-neoui-grid#readme
  * bugs : https://github.com/iuap-design/tinper-neoui-grid/issues
- **/ 
+ **/
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -1887,7 +1887,9 @@
 	    $.each(gridCompColumnArr, function () {
 	        if (this.options.visible) {
 	            htmlStr += '<col';
-	            htmlStr += ' style="width:' + oThis.formatWidth(this.options.width) + '"';
+				if(!this.options.autoExpand){
+					htmlStr += ' style="width:' + oThis.formatWidth(this.options.width) + '"';
+				}
 	            htmlStr += '>';
 	        }
 	    });
@@ -4805,6 +4807,7 @@
 	                    } else {
 	                        oThis.contentWidth = oThis.contentRealWidth;
 	                    }
+
 	                    $('#' + oThis.options.id + '_noRows').css('width', oThis.contentWidth + 'px');
 	                    if (typeof oThis.options.afterCreate == 'function') {
 	                        oThis.options.afterCreate.call(oThis);
